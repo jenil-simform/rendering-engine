@@ -6,7 +6,7 @@ const getAddProductForm = (req, res) => {
     res.render('forms');
 }
 
-const showAllProducts = async(req, res) => {
+const showAllProducts = (req, res) => {
     console.log(req.file)
     // res.set('content-type', 'image/png')
     // res.send(req.file.buffer)
@@ -25,12 +25,12 @@ const showAllProducts = async(req, res) => {
 
 
     // })
-    // res.render('product', {
-    //     productName: req.body.productName,
-    //     productPrice: req.body.productPrice,
-    //     productDescription: req.body.productDescription,
-    //     file : req.file
-    // })
+    res.render('product', {
+        productName: req.body.productName,
+        productPrice: req.body.productPrice,
+        productDescription: req.body.productDescription,
+        file : `uploads/${req.file.filename}`
+    })
 
 }
 
